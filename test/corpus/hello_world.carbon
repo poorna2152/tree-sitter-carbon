@@ -1,0 +1,84 @@
+==================
+Hello World
+==================
+package ExplorerTest api;
+fn Main() -> i32 {
+  var s: auto = "Hello world!";
+  Print(s);
+  return 0;
+}
+
+---
+(source_file
+  (input
+    (package_directive
+      (identifier)
+      (api_or_impl))
+    (declaration
+      (function_declaration
+        (fn_virtual_override_intro)
+        (declared_name
+          (identifier))
+        (maybe_empty_tuple_pattern)
+        (return_term
+          (expression
+            (if_expression
+              (statement_expression
+                (ref_deref_expression
+                  (postfix_expression
+                    (primary_expression
+                      (sized_type_literal))))))))
+        (block
+          (statement
+            (pattern
+              (non_expression_pattern
+                (binding_lhs
+                  (identifier))
+                (pattern
+                  (non_expression_pattern))))
+            (expression
+              (if_expression
+                (statement_expression
+                  (ref_deref_expression
+                    (postfix_expression
+                      (primary_expression
+                        (string_literal
+                          (double_quoted_string_literal
+                            (string_char)
+                            (string_char)
+                            (string_char)
+                            (string_char)
+                            (string_char)
+                            (string_char)
+                            (string_char)
+                            (string_char)
+                            (string_char)
+                            (string_char)
+                            (string_char))))))))))
+          (statement
+            (statement_expression
+              (ref_deref_expression
+                (postfix_expression
+                  (postfix_expression
+                    (primary_expression
+                      (identifier)))
+                  (tuple
+                    (paren_expression_base
+                      (paren_expression_contents
+                        (expression
+                          (if_expression
+                            (statement_expression
+                              (ref_deref_expression
+                                (postfix_expression
+                                  (primary_expression
+                                    (identifier))))))))))))))
+          (statement
+            (return_expression
+              (expression
+                (if_expression
+                  (statement_expression
+                    (ref_deref_expression
+                      (postfix_expression
+                        (primary_expression
+                          (int_literal
+                            (decimal_number)))))))))))))))
