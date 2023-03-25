@@ -7,6 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
+  "tree-sitter": [
+    {
+        "scope": "source.carbon",
+        "file-types": [
+            "carbon"
+        ]
+    }
+  ],
   "license": "ISC",
   "dependencies": {
     "nan": "^2.17.0"

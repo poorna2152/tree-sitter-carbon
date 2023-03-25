@@ -16,7 +16,6 @@ fn Main() -> i32 {
       (api_or_impl))
     (declaration
       (function_declaration
-        (fn_virtual_override_intro)
         (declared_name
           (identifier))
         (maybe_empty_tuple_pattern)
@@ -26,8 +25,7 @@ fn Main() -> i32 {
               (statement_expression
                 (ref_deref_expression
                   (postfix_expression
-                    (primary_expression
-                      (sized_type_literal))))))))
+                    (primary_expression)))))))
         (block
           (statement
             (pattern

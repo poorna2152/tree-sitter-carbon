@@ -9,13 +9,12 @@ module.exports = grammar({
     declaration: ($) => choice($.function_declaration),
     function_declaration: ($) =>
       seq(
-        $.fn_virtual_override_intro,
+        "fn",
         $.declared_name,
         $.maybe_empty_tuple_pattern,
         $.return_term,
         $.block
       ),
-    fn_virtual_override_intro: ($) => "fn",
     declared_name: ($) => $.identifier,
     identifier: ($) => /[A-Za-z][A-Za-z0-9_]*/,
     maybe_empty_tuple_pattern: ($) => seq("(", ")"),
@@ -28,12 +27,7 @@ module.exports = grammar({
     postfix_expression: ($) =>
       choice($.primary_expression, seq($.postfix_expression, $.tuple)),
     primary_expression: ($) =>
-      choice(
-        $.identifier,
-        $.int_literal,
-        $.string_literal,
-        $.sized_type_literal
-      ),
+      choice($.identifier, $.int_literal, $.string_literal, "i32"),
 
     int_literal: ($) => prec(1, choice($.decimal_number, $.hex_int_literal)),
     decimal_number: ($) => choice("0", seq($.non_zero_digit, repeat($.digit))),
@@ -53,8 +47,6 @@ module.exports = grammar({
     numeric_escape: ($) => seq("\\u", "{", $.code_point, "}"),
     code_point: ($) => repeat1($.hex_digit),
     hex_digit: ($) => choice($.digit, /[a-f]/, /[A-F]/),
-
-    sized_type_literal: ($) => "i32",
 
     block: ($) => seq("{", repeat($.statement), "}"),
     statement: ($) =>

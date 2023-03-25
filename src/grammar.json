@@ -68,8 +68,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "fn_virtual_override_intro"
+          "type": "STRING",
+          "value": "fn"
         },
         {
           "type": "SYMBOL",
@@ -88,10 +88,6 @@
           "name": "block"
         }
       ]
-    },
-    "fn_virtual_override_intro": {
-      "type": "STRING",
-      "value": "fn"
     },
     "declared_name": {
       "type": "SYMBOL",
@@ -199,8 +195,8 @@
           "name": "string_literal"
         },
         {
-          "type": "SYMBOL",
-          "name": "sized_type_literal"
+          "type": "STRING",
+          "value": "i32"
         }
       ]
     },
@@ -406,10 +402,6 @@
         "type": "SYMBOL",
         "name": "hex_digit"
       }
-    },
-    "sized_type_literal": {
-      "type": "STRING",
-      "value": "i32"
     },
     "block": {
       "type": "SEQ",
